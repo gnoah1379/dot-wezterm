@@ -1,0 +1,66 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[ui]
+show_agent_labels_on_pane_borders = true
+prompt_new_tab_name = false
+
+[keys]
+# Phím Prefix dự phòng (Ctrl+B tiêu chuẩn)
+prefix = "ctrl+b"
+
+# === 1. Chia Split Panes (giống Ghostty trên macOS) ===
+# Cmd+D chia dọc (bên phải), Cmd+Shift+D chia ngang (bên dưới)
+split_vertical = ["cmd+d", "prefix+v"]
+split_horizontal = ["cmd+shift+d", "prefix+minus"]
+close_pane = ["cmd+w", "prefix+x"]
+zoom = ["cmd+shift+enter", "prefix+z"]
+
+# === 2. Điều hướng Split (Ghostty Split Navigation) ===
+# Cmd+Alt+Mũi tên điều hướng 4 hướng, Cmd+[ / Cmd+] chuyển qua lại
+focus_pane_left = ["cmd+alt+left", "prefix+h"]
+focus_pane_right = ["cmd+alt+right", "prefix+l"]
+focus_pane_up = ["cmd+alt+up", "prefix+k"]
+focus_pane_down = ["cmd+alt+down", "prefix+j"]
+cycle_pane_previous = ["cmd+[", "prefix+shift+tab"]
+cycle_pane_next = ["cmd+]", "prefix+tab"]
+
+# === 3. Thay đổi kích thước Split (Ghostty Split Resizing) ===
+# Cmd+Ctrl+Mũi tên để co giãn kích thước pane
+resize_pane_left = "cmd+ctrl+left"
+resize_pane_right = "cmd+ctrl+right"
+resize_pane_up = "cmd+ctrl+up"
+resize_pane_down = "cmd+ctrl+down"
+
+# === 4. Quản lý Tabs (giống Ghostty macOS) ===
+# Cmd+T tạo tab mới, Cmd+1..9 chuyển trực tiếp, Ctrl+Tab hoặc Cmd+Shift+[/] chuyển tab
+new_tab = ["cmd+t", "prefix+c"]
+close_tab = ["cmd+alt+w", "prefix+shift+x"]
+previous_tab = ["cmd+shift+[", "ctrl+shift+tab", "prefix+p"]
+next_tab = ["cmd+shift+]", "ctrl+tab", "prefix+n"]
+switch_tab = ["cmd+1..9", "prefix+1..9"]
+rename_tab = ["cmd+shift+t", "prefix+shift+t"]
+
+# === 5. Quản lý Workspace & Command Palette ===
+# Tối ưu cho macOS: Cmd+N tạo workspace, Cmd+Shift+P / Cmd+P mở bảng lệnh nhanh
+new_workspace = ["cmd+n", "prefix+shift+n"]
+close_workspace = ["cmd+shift+w", "prefix+shift+d"]
+workspace_picker = ["cmd+o", "prefix+w"]
+goto = ["cmd+shift+p", "cmd+p", "prefix+g"]
+toggle_sidebar = ["cmd+b", "cmd+alt+i", "prefix+b"]
+
+# === 6. Hệ thống & Thao tác tiện ích ===
+settings = ["cmd+,", "prefix+s"]
+reload_config = ["cmd+shift+comma", "prefix+shift+r"]
+help = ["cmd+?", "prefix+?"]
+copy_mode = ["cmd+shift+c", "prefix+["]
+edit_scrollback = ["cmd+shift+e", "prefix+e"]
+detach = "prefix+q"
+
+[experimental]
+kitty_graphics = true
+# Tự động chuyển bộ gõ về layout ASCII khi vào prefix mode trên macOS (tránh kẹt phím gõ tiếng Việt / Telex / VNI)
+switch_ascii_input_source_in_prefix = true
